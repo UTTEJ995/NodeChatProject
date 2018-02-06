@@ -1,0 +1,24 @@
+{
+  "name": "chatproject",
+  "version": "0.0.1",
+  "description": "Text Messaging for Web App",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "chat",
+    "video",
+    "audio",
+    "conference"
+  ],
+  "author": "Uttej",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "socket.io": "^2.0.4",
+    "socket.io-stream": "^0.9.1"
+  }
+}

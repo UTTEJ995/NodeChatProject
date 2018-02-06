@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/style.css" rel="stylesheet">
+<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMPcwIOC-2lB1oPi7c6tpDnLBCF3qj8QM&callback=locationFind"
+  type="text/javascript"></script></head>-->
+</head>
+<body>
+	<!--******************************************* This section takes care of displaying the home page of this application ***********----->
+	<div class="WorkArea">
+		<div class="CallOptions"><div><img src="Media/audiocall.jpg" id="audio" title="Voice Call" class="CallButtons">&nbsp;&nbsp;&nbsp;<img src="Media/videoCall1.png" id="video" title="Video Call" class="CallButtons"></div></div>
+	</div>
+	<div id="MediaSpace">			<!-- Media Elements----------->
+		<span id="Close" title="Close">X</span>
+		<div class="AskNumOfCallee">
+			<h4> Please choose the number of people you want to call</h4>
+			<select id="calleeQuan"><option value="0" selected>----Select----</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select>
+		</div>
+		<div class="PickCallee">
+			<h4> These are the list of people who are online. Pick <span id="callNum"></span> of them</h4>
+			<div id="OlineList"><div id="ulistNames"></div><button id="CallThem">Call Them</button></div>	
+		</div>
+		<div id="incomingCall"></div>
+		<div class="selfFacingContainer" id="selfFacingContainer"></div><canvas id="myself" style="display:none;" height="720" width="1080">
+		</canvas>
+
+		<div class="onetoOne" id="onetoOne">
+			<div id="11a"><img id="I1A" height="360" width="640" alt="chat"><audio id="V1A" autoplay></audio><button class="end">End Call</button></div>
+		</div>
+		<div class="onetoTwo" id="onetoTwo">
+			<div id="12a"><img id="I2A" height="360" width="640" alt="chat"><audio id="V2A" autoplay></audio><button class="end">End Call</button></div>
+			<div id="12b"><img id="I2B" height="360" width="640" alt="chat"><audio id="V2B" autoplay></audio><button class="end">End Call</button></div>
+		</div>
+		<div class="onetoThree" id="onetoThree">
+			<div id="13a"><img id="I3A" height="360" width="640" alt="chat"><audio id="V3A" autoplay></audio><button class="end">End Call</button></div>
+			<div id="13b"><img id="I3B" height="360" width="640" alt="chat"><audio id="V3B" autoplay></audio><button class="end">End Call</button></div>
+			<div id="13c"><img id="I3C" height="360" width="640" alt="chat"><audio id="V3C" autoplay></audio><button class="end">End Call</button></div>
+		</div>
+		<div class="onetoFour"  id="onetoFour">
+			<div id="14a"></div>
+			<div id="14b"></div>
+			<div id="14c"></div>
+			<div id="14d"></div>
+		</div>
+	</div>
+	<div id="textSpace">				<!-- chat-boxes --- text ------------------------------>
+			<div class="ChatBox" id="ChatBox1"><div id="ChatHeader1" class="ChatHeader"><h5>Abcd</h5><span class="close" onclick="closeThis(1)">x</span></div><div class="PreMsgs" id="PreMsgs1"></div><div class="InMsgDiv" id="InMsgDiv1"><img class="emoji" src="Media/emoji.jpg" alt="em"><textarea id="tBox1" rows="4" columns="6"></textarea><img class="voiceRecord" src="Media/voiceCall.png" alt="AudioRecord"></div></div>
+			<div class="ChatBox" id="ChatBox2"><div id="ChatHeader2" class="ChatHeader"><h5>Abcd</h5><span class="close"onclick="closeThis(2)">x</span></div><div class="PreMsgs" id="PreMsgs2"></div><div class="InMsgDiv" id="InMsgDiv2"><img src="Media/emoji.jpg" alt="em" class="emoji"><textarea rows="4" columns="6" id="tBox2"></textarea><img class="voiceRecord" src="Media/voiceCall.png" alt="AudioRecord"></div></div>
+			<div class="ChatBox" id="ChatBox3"><div id="ChatHeader3" class="ChatHeader"><h5>Abcd</h5><span class="close" onclick="closeThis(3)">x</span></div><div class="PreMsgs" id="PreMsgs3"></div><div class="InMsgDiv" id="InMsgDiv3"><img src="Media/emoji.jpg" alt="em" class="emoji"><textarea rows="4" columns="6" id="tBox3"></textarea><img class="voiceRecord" src="Media/voiceCall.png" alt="AudioRecord"></div></div>
+			<div class="ChatBox" id="ChatBox4"><div id="ChatHeader4" class="ChatHeader"><h5>Abcd</h5><span class="close" onclick="closeThis(4)">x</span></div><div class="PreMsgs" id="PreMsgs4"></div><div class="InMsgDiv" id="InMsgDiv4"><img src="Media/emoji.jpg" alt="em" class="emoji"><textarea rows="4" columns="6" id="tBox4"></textarea><img class="voiceRecord" src="Media/voiceCall.png" alt="AudioRecord"></div></div>
+	</div>
+	<div id="Userslist">
+			<!--<ul>
+				<li><a href="javascript:void(0)" class="usersListAnchors" onclick="userDet(this)" id="UA3031">Ayesha</a><img src="Media/emoji.jpg" alt="uicon" class="uimg"></li>
+				<li><a href="javascript:void(0)" id="UA3302" onclick="userDet(this)" name="ON" class="usersListAnchors">Vinod</a><img src="Media/emoji.jpg" alt="uicon" class="uimg"></li>
+				<li><a href="javascript:void(0)" id="UA3303" onclick="userDet(this)" name="ON" class="usersListAnchors">Ravalamma</a><img src="Media/emoji.jpg" alt="uicon" class="uimg"></li>
+				<li><a href="javascript:void(0)" id="UA3034" onclick="userDet(this)" class="usersListAnchors">Ammu</a><img src="Media/emoji.jpg" alt="uicon" class="uimg"></li>
+			</ul>-->
+	</div>
+	<form>
+	<input type="hidden" id="hiddenMyId"></form>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

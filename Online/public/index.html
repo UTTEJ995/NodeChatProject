@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<form name="LoginForm" action="../" method="POST">
+			Enter User Id: <input type="text" required maxlength="6" name="user">
+			<input type="button" value="Login" name="sbmt"> 
+		</form>
+	<script>
+		window.onload=function(){
+			document.LoginForm.reset();
+		}
+		document.LoginForm.sbmt.addEventListener("click",
+			function(){
+				if(!document.LoginForm.user.value){
+					alert("Please enter the login Id");
+					return;
+				}
+				else{
+					document.LoginForm.submit();
+				}
+			}
+		);
+	</script>	
+</html>
